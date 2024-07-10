@@ -18,7 +18,7 @@ const saltRounds = 10; // Define salt rounds for bcrypt
 const secret = "an12x85qm9k5ie9ts4hi7oam0kj1et3dgvz6r8epl3f0hsrw";
 
 // app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
-app.use(cors({ credentials: true, origin: "https://asm-blog.vercel.app/", methods:["POST", "GET"] }));
+app.use(cors({ credentials: true, origin: "https://asm-blog.vercel.app/", methods:["POST", "GET", "PUT", "DELETE"] }));
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cookieParser()); // Middleware to parse cookies
 app.use('/uploads', express.static(__dirname + '/uploads'));  // to show image from backend to link
@@ -296,8 +296,9 @@ app.get('/post/:id', async (req,res)=>{
 
 
 // run server
-app.listen(4000, () => {
-  console.log("Server is running on port 4000");
+const port = process.env.PORT || 4000; // Use process.env.PORT for deployment flexibility
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 
