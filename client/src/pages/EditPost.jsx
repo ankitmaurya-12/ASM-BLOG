@@ -46,7 +46,8 @@ function EditPost() {
   }
   
   useEffect(()=>{
-    fetch('http://localhost:4000/post/'+ postId)
+    // fetch('http://localhost:4000/post/'+ postId)
+    fetch('https://api-asm-blog.vercel.app/post/'+ postId)
     .then(response=>{
       response.json().then(postInfo =>{
         setTitle(postInfo.title);
@@ -70,7 +71,8 @@ function EditPost() {
       data.set('file', files?.[0]);
     }
 
-    await fetch('http://localhost:4000/post',{
+    // await fetch('http://localhost:4000/post',{
+    await fetch('https://api-asm-blog.vercel.app/post',{
       method: 'PUT',
       body :data,
     });

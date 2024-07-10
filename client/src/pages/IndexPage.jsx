@@ -15,7 +15,8 @@ export default function IndexPage() {
     // }, []);
 
     useEffect(() => {
-        fetch('http://localhost:4000/post')
+        // fetch('http://localhost:4000/post')
+        fetch('https://api-asm-blog.vercel.app/post')
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);

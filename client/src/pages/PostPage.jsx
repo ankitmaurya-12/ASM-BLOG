@@ -10,7 +10,8 @@ function PostPage() {
 
   useEffect(() => {
     // console.log(id);
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    // fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`https://api-asm-blog.vercel.app/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -93,7 +94,8 @@ function PostPage() {
         </div>
       )}
       <div className="image">
-        <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
+        {/* <img src={`http://localhost:4000/${postInfo.cover}`} alt="" /> */}
+        <img src={`https://api-asm-blog.vercel.app/${postInfo.cover}`} alt="" />
       </div>
       <div
         className="content"

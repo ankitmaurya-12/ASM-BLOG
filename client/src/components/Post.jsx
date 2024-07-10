@@ -24,7 +24,8 @@ export default function Post({_id, title, summary, content, cover, createdAt, au
         <div className="post">
             <div className="image">
                 <Link to={`/post/${_id}`}>
-                <img src={`http://localhost:4000/${cover.replace(/\\/g, '/')}`} alt="Not Found" />
+                {/* <img src={`http://localhost:4000/${cover.replace(/\\/g, '/')}`} alt="Not Found" /> */}
+                <img src={`https://api-asm-blog.vercel.app/${cover.replace(/\\/g, '/')}`} alt="Not Found" />
                 </Link>
             </div>
             <div className="texts">

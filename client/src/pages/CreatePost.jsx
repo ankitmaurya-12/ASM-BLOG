@@ -71,7 +71,8 @@ function CreatePost() {
 
     // GPT VERSION  ->>>>>
     try {
-      const response = await fetch("http://localhost:4000/post", {
+      // const response = await fetch("http://localhost:4000/post", {
+      const response = await fetch("https://api-asm-blog.vercel.app/post", {
         method: "POST",
         body: data,
         credentials: "include",

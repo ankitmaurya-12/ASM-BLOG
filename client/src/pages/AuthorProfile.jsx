@@ -6,7 +6,8 @@ function AuthorProfile() {
     const [authorInfo, setAuthorInfo] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/author/${authorId}`)
+        // fetch(`http://localhost:4000/author/${authorId}`)
+        fetch(`https://api-asm-blog.vercel.app/author/${authorId}`)
             .then(response => response.json())
             .then(authorInfo => {
                 setAuthorInfo(authorInfo);

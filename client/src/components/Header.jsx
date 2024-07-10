@@ -7,7 +7,8 @@ export default function Header() {
     const{userInfo, setUserInfo} = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:4000/profile', {
+        // fetch('http://localhost:4000/profile', {
+        fetch('https://api-asm-blog.vercel.app/profile', {
             credentials: "include",
         }).then(response => {
             response.json().then(userInfo => {
@@ -23,7 +24,8 @@ export default function Header() {
     const handleLogout = () => {
         // Add logout logic here
         // For example, make a POST request to logout endpoint
-        fetch('http://localhost:4000/logout', {
+        // fetch('http://localhost:4000/logout', {
+        fetch('https://api-asm-blog.vercel.app/logout', {
             method: 'POST',
             credentials: "include",
         }).then(() => {
