@@ -38,6 +38,10 @@ mongoose
 // Routes
 
 // Register page route
+app.get("/", (req, res)=>{
+  res.json("Hello World.")
+})
+
 app.post("/register", async (req, res) => {
   const { authorname, username, password } = req.body;
 
